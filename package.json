@@ -1,0 +1,26 @@
+{
+  "name" : "cordova-plugin-system-gesture", 
+  "version" : "0.0.1",
+  "description": "This plugin avoids conflicts with back gestures in android 10's gesture navigation.",
+  "author": {
+    "name": "Keeey"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keeey/cordova-plugin-system-gesture"
+  },
+  "cordova": {
+    "id": "cordova-plugin-system-gesture",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": {
+    "cordova": ">=9.0.0"
+  }
+}

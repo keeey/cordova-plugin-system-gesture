@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-system-gesture" version="0.0.1">
+
+    <name>System Gesture Plugin</name>
+    <description>This plugin avoids conflicts with back gestures in android 10's gesture navigation.</description>
+
+    <license>MIT</license>
+    
+    <dependency id="cordova-plugin-androidx" version="^1.0.2" />
+    <dependency id="cordova-plugin-androidx-adapter" version="^1.1.0" />
+
+    <engines>
+      <engine name="cordova" version=">=9" />
+      <engine name="cordova-android" version=">=8" />
+    </engines>
+
+    <js-module src="www/system_gesture.js" name="SystemGesture">
+        <clobbers target="cordova.plugins.systemGesture" />
+    </js-module>
+
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="SystemGesturePlugin"> 
+                <param name="android-package" value="org.apache.cordova.system.gesture.SystemGesturePlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+        <preference name="ANDROIDX_CORE_VERSION" default="1.2.0-beta02" />
+
+        <source-file src="src/android/SystemGesturePlugin.java" target-dir="src/org/apache/cordova/syste/mgesture" />
+        <framework src="src/android/build-extras.gradle" custom="true" type="gradleReference"/>
+        <framework src="androidx.core:core:$ANDROIDX_CORE_VERSION" />
+    </platform>
+
+</plugin>
